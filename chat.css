@@ -156,13 +156,11 @@ header {
   .input-area input {
     font-size: 1rem;
     padding: 14px 18px;
-    margin-bottom: 70px;
   }
 
   .input-area button {
     padding: 14px 22px;
     font-size: 1rem;
-    margin-bottom: 70px;
   }
 
   .message {
