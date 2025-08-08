@@ -4,11 +4,12 @@ img{width: 1000px;
 height: 880px;
 width: 1900px;}
 @media(max-width: 768px) {
-   img{width: 500px;
+   img{width: 400px;
 height: 300px;
 margin-top: 160px;
 margin-left: 0px
 } 
 }
+
 
 
