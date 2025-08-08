@@ -38,11 +38,12 @@ async function sendMessage() {
     addMessage("Adedigba Opeyemi is my developer and the founder of TemiD Tech. A young, brilliant and talented mind hoping to reshape the technology world and make great impacts.", "bot");
     return;
   }
+  
   if (
     lowerText.includes("hi")||
     lowerText.includes("hello")
   ) {
-    addMessage("Hello! How can I help you today", "bot");
+    addMessage("Hello! How can I help you today?", "bot");
     return;
   }
   
@@ -89,7 +90,4 @@ function addMessage(text, sender) {
 
 window.onload = function () {
   addMessage("Hi! I'm Lexo, Ask me anything!", "bot");
-
 };
-
-
