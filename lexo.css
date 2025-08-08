@@ -1,0 +1,11 @@
+*{padding: 0px;
+margin: 0px;}
+img{width: 1000px;
+height: 880px;
+width: 1900px;}
+@media(max-width: 768px) {
+   img{width: 500px;
+height: 500px;
+margin-top: 180px;
+} 
+}
