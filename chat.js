@@ -1,6 +1,6 @@
 // Replace with your free Gemini API key from Google AI Studio
 // Get it here: https://aistudio.google.com/app/apikey
-const API_KEY = "AIzaSyAAbGEHGpC5T-VzZDhLmpEMflZWqpD6bzQ";
+const API_KEY = "AIzaSyCAbaPuKWUkVQd1E-p_mSI1zVm1-AiyIg0";
 
 console.log("Hello, I am Lexo. How can I help you?");
 
@@ -163,4 +163,5 @@ window.onload = function () {
 saveChat();
 window.onload = function () {
   addMessage("Hi! I'm Lexo, Ask me anything!", "bot");
+
 };
