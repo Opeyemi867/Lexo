@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lexo</title>
+  <link rel="stylesheet" href="chat.css" />
+</head>
+<body>
+  <header>
+  <span class="logo">Lexo</span>
+  <div class="menu">
+    <button id="hamburger">☰</button>
+    <div id="menu-dropdown" class="hidden">
+      <button id="clearChat">Clear Chat</button>
+      <button id="toggleTheme">Toggle Theme</button>
+    </div>
+  </div>
+</header>
+
+  <div class="chat-container">
+    <div id="chat"></div>
+    <div class="input-area">
+      <input type="text" id="userInput" placeholder="Ask me anything..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script src="chat.js"></script>
+</body>
+</html>

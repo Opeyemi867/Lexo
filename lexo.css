@@ -1,0 +1,39 @@
+*{padding: 0px;
+margin: 0px;}
+img {
+  display: block;
+  max-width: 80vw;   /* Fits nicely inside screen width */
+  max-height: 80vh;  /* Fits nicely inside screen height */
+  width: auto;
+  height: auto;
+  margin: 0 auto;    /* Centers it horizontally */
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast; /* Sharper display */
+  image-rendering: crisp-edges;               /* Avoids blur */
+  margin-top: 180px;
+  filter: brightness(1.1);
+  align-items: center;
+  justify-content: center;
+  padding-top: 120px;
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  animation: zoomIn 1s ease-out forwards;
+}
