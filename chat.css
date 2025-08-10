@@ -31,6 +31,7 @@ header {
   box-shadow: 0 4px 20px rgba(102, 126, 234, 0.6);
   user-select: none;
   flex-shrink: 0;
+  position: fixed
 }
 
 /* Chat container */
@@ -308,4 +309,5 @@ header .menu {
   .message {
     font-size: 1rem;
   }
+
 }
