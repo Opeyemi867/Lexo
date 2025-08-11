@@ -42,7 +42,6 @@ header {
   padding: 20px 16px;
   background: #121830; /* Very dark navy */
   border-radius: 0 0 20px 20px;
-  box-shadow: inset 0 0 50px #2e3192;
   height: 100vh;
 }
 
@@ -127,7 +126,6 @@ header {
 .input-area input:focus {
   background-color: #3b4cad;
   color: #f0f5ff;
-  box-shadow: 0 0 12px #667eea;
 }
 
 .input-area button {
@@ -311,3 +309,4 @@ header .menu {
   }
 
 }
+
