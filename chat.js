@@ -38,11 +38,6 @@ async function sendMessage() {
     return;
   }
 
-  if (lowerText.includes("hi") || lowerText.includes("hello")) {
-    addMessage("Hello! How can I help you today?", "bot");
-    return;
-  }
-
   try {
     showTyping();
     const response = await fetch(
@@ -165,3 +160,4 @@ window.onload = function () {
   addMessage("Hi! I'm Lexo, Ask me anything!", "bot");
 
 };
+
