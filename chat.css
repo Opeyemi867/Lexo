@@ -28,7 +28,6 @@ header {
   letter-spacing: 3px;
   color: #f0f5ff;
   text-shadow: 0 0 8px rgba(118, 75, 162, 0.8);
-  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.6);
   user-select: none;
   flex-shrink: 0;
   position: fixed
@@ -309,4 +308,5 @@ header .menu {
   }
 
 }
+
 
