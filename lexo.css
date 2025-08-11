@@ -14,7 +14,7 @@ img {
   filter: brightness(1.1);
   align-items: center;
   justify-content: center;
-  padding-top: 120px;
+  padding-top: 150px;
 }
 @keyframes zoomIn {
   0% {
@@ -37,3 +37,4 @@ img{
   margin: 0 auto;
   animation: zoomIn 1s ease-out forwards;
 }
+
