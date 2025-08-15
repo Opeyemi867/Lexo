@@ -28,9 +28,10 @@ header {
   letter-spacing: 3px;
   color: #f0f5ff;
   text-shadow: 0 0 8px rgba(118, 75, 162, 0.8);
+  
   user-select: none;
   flex-shrink: 0;
-  position: fixed
+  position: fixed;
 }
 
 /* Chat container */
@@ -78,6 +79,7 @@ header {
   box-shadow: 0 3px 12px rgba(0,0,0,0.4);
   user-select: text;
   transition: background-color 0.3s ease;
+  
 }
 
 /* User message (right) */
@@ -105,9 +107,16 @@ header {
   gap: 16px;
 }
 
-.input-area input {
-  flex-grow: 1;
-  padding: 16px 22px;
+/* Input wrapper for mic inside input */
+.input-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+/* Text input adjustments for mic */
+.input-wrapper input {
+  width: 100%;
+  padding: 16px 50px 16px 22px; /* added right padding for mic */
   border-radius: 30px;
   border: none;
   outline: none;
@@ -118,15 +127,42 @@ header {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.input-area input::placeholder {
+.input-wrapper input::placeholder {
   color: #a0a8d3;
 }
 
-.input-area input:focus {
+.input-wrapper input:focus {
   background-color: #3b4cad;
   color: #f0f5ff;
 }
 
+/* Mic button inside input */
+#micBtn {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background: #764ba2; /* matches send button color */
+  color: #f0f5ff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: 0 6px 20px #764ba2cc;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#micBtn:hover {
+  background: #5b3990; /* matches send button hover */
+  box-shadow: 0 8px 28px #5b3990cc;
+}
+
+/* Send button */
 .input-area button {
   padding: 16px 28px;
   border-radius: 30px;
@@ -137,13 +173,14 @@ header {
   font-size: 1.1rem;
   cursor: pointer;
   box-shadow: 0 6px 20px #764ba2cc;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;;
 }
 
 .input-area button:hover {
   background: #5b3990;
   box-shadow: 0 8px 28px #5b3990cc;
 }
+
 body.dark-mode {
   background-color: #222;
   color: white;
@@ -306,8 +343,7 @@ header .menu {
   .message {
     font-size: 1rem;
   }
-
 }
-
-
-
+.btns {
+  margin-left: -180px;
+}
