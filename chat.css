@@ -111,6 +111,8 @@ header {
 .input-wrapper {
   position: relative;
   flex: 1;
+  border-radius: 30px;
+  overflow: hidden
 }
 
 /* Text input adjustments for mic */
@@ -362,6 +364,7 @@ button:focus {
   outline: none;
   box-shadow: none;
 }
+
 
 
 
