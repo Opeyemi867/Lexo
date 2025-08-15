@@ -9,7 +9,7 @@
 }
 
 body {
-  height: 113vh;
+  height: 100vh;
   background: linear-gradient(135deg, #2a5298, #1e3c72); /* Deep blue gradient */
   display: flex;
   flex-direction: column;
@@ -102,7 +102,7 @@ header {
 .input-area {
   display: flex;
   margin-top: 16px;
-  gap: 5px;
+  gap: 16px;
 }
 
 .input-area input {
