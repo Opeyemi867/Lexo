@@ -161,6 +161,45 @@ window.onload = function () {
 
 };
 
+const micBtn = document.getElementById("micBtn");
+let recognition;
+
+// Check for browser support
+if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  recognition = new SpeechRecognition();
+  recognition.lang = 'en-US'; // set language
+  recognition.continuous = false;
+  recognition.interimResults = false;
+
+  // When speech ends
+  recognition.onresult = function(event) {
+    const transcript = event.results[0][0].transcript;
+    document.getElementById("userInput").value = transcript;
+    sendMessage(); // automatically send after speaking
+  };
+
+  recognition.onerror = function(event) {
+    console.error("Speech recognition error:", event.error);
+  };
+} else {
+  micBtn.disabled = true;
+  micBtn.textContent = "❌";
+  console.warn("Speech Recognition not supported in this browser.");
+}
+
+// Start listening when mic button is clicked
+micBtn.addEventListener("click", () => {
+  if (recognition) {
+    recognition.start();
+  }
+});
+
+
+
+
+
+
 
 
 
