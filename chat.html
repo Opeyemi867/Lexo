@@ -8,27 +8,27 @@
 </head>
 <body>
   <header>
-  <span class="logo">Lexo</span>
-  <div class="menu">
-    <button id="hamburger">☰</button>
-    <div id="menu-dropdown" class="hidden">
-      <button id="clearChat">Clear Chat</button>
-      <button id="toggleTheme">Toggle Theme</button>
+    <span class="logo">Lexo</span>
+    <div class="menu">
+      <button id="hamburger">☰</button>
+      <div id="menu-dropdown" class="hidden">
+        <button id="clearChat">Clear Chat</button>
+        <button id="toggleTheme">Toggle Theme</button>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
   <div class="chat-container">
     <div id="chat"></div>
     <div class="input-area">
-      <input type="text" id="userInput" placeholder="Ask me anything..." />
-      <button onclick="sendMessage()">Send</button>
-     
+      <div class="input-wrapper">
+        <input type="text" id="userInput" placeholder="Ask me anything..." />
+        <button id="micBtn">🎙️</button>
+      </div>
+      <button onclick="sendMessage()" id="sendBtn">Send</button>
     </div>
   </div>
 
   <script src="chat.js"></script>
 </body>
-
 </html>
-
