@@ -322,10 +322,16 @@ header .menu {
 #menu-dropdown button:hover {
   background: rgba(255,255,255,0.2);
 }
+/* Remove all focus outlines and mobile tap highlight */
 input:focus,
 button:focus {
   outline: none;
   box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0; /* optional to avoid inner glow on iOS */
 }
 /* Responsive tweaks */
 @media (max-width: 480px) {
@@ -356,6 +362,7 @@ button:focus {
   outline: none;
   box-shadow: none;
 }
+
 
 
 
