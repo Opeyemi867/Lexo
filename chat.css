@@ -359,6 +359,11 @@ button:focus {
   color: #fff;          /* optional hover effect for icon */
 }
 }
+#micBtn {
+  -webkit-tap-highlight-color: transparent; /* removes tap highlight on mobile */
+  outline: none;                             /* removes focus outline */
+  box-shadow: none;                           /* just in case */
+}
 
 /* Responsive tweaks */
 @media (max-width: 480px) {
@@ -389,6 +394,7 @@ button:focus {
   outline: none;
   box-shadow: none;
 }
+
 
 
 
