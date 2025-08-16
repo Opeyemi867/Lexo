@@ -111,8 +111,6 @@ header {
 .input-wrapper {
   position: relative;
   flex: 1;
-  border-radius: 30px;
-  overflow: hidden
 }
 
 /* Text input adjustments for mic */
@@ -324,6 +322,18 @@ header .menu {
 #menu-dropdown button:hover {
   background: rgba(255,255,255,0.2);
 }
+/* Remove all focus outlines and mobile tap highlight */
+input:focus,
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0; /* optional to avoid inner glow on iOS */
+}
+
 /* Mic button inside input - transparent version */
 #micBtn {
   position: absolute;
@@ -340,32 +350,14 @@ header .menu {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;  }  /* make mic a bit bigger */
+  font-size: 1.2rem;    /* make mic a bit bigger */
+  box-shadow: none;     /* remove shadow */
+  padding: 0;           /* remove extra padding */
+}
 
 #micBtn:hover {
   color: #fff;          /* optional hover effect for icon */
 }
-}
-#micBtn {
-  -webkit-tap-highlight-color: transparent; /* removes tap highlight on mobile */
-  outline: none;                             /* removes focus outline */
-  box-shadow: none;                           /* just in case */
-}
-
-/* Remove all focus outlines and mobile tap highlight */
-input:focus,
-button:focus {
-  outline: none;
-  box-shadow: none;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-radius: 30px;
-   box-shadow: none;     /* remove shadow */
-  padding: 0;           /* remove extra padding */
-}
-
 
 /* Responsive tweaks */
 @media (max-width: 480px) {
@@ -391,19 +383,3 @@ button:focus {
 .btns {
   margin-left: -180px;
 }
-input:focus,
-button:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-
-
-
-
-
-
-
-
-
-
