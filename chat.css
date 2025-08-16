@@ -340,7 +340,18 @@ header .menu {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;    /* make mic a bit bigger */
+  font-size: 1.2rem;  }  /* make mic a bit bigger */
+
+#micBtn:hover {
+  color: #fff;          /* optional hover effect for icon */
+}
+}
+#micBtn {
+  -webkit-tap-highlight-color: transparent; /* removes tap highlight on mobile */
+  outline: none;                             /* removes focus outline */
+  box-shadow: none;                           /* just in case */
+}
+
 /* Remove all focus outlines and mobile tap highlight */
 input:focus,
 button:focus {
@@ -355,15 +366,6 @@ button:focus {
   padding: 0;           /* remove extra padding */
 }
 
-#micBtn:hover {
-  color: #fff;          /* optional hover effect for icon */
-}
-}
-#micBtn {
-  -webkit-tap-highlight-color: transparent; /* removes tap highlight on mobile */
-  outline: none;                             /* removes focus outline */
-  box-shadow: none;                           /* just in case */
-}
 
 /* Responsive tweaks */
 @media (max-width: 480px) {
@@ -394,6 +396,7 @@ button:focus {
   outline: none;
   box-shadow: none;
 }
+
 
 
 
