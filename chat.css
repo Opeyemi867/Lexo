@@ -324,18 +324,6 @@ header .menu {
 #menu-dropdown button:hover {
   background: rgba(255,255,255,0.2);
 }
-/* Remove all focus outlines and mobile tap highlight */
-input:focus,
-button:focus {
-  outline: none;
-  box-shadow: none;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-radius: 30px;
-}
-
 /* Mic button inside input - transparent version */
 #micBtn {
   position: absolute;
@@ -353,13 +341,25 @@ button:focus {
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;    /* make mic a bit bigger */
-  box-shadow: none;     /* remove shadow */
+/* Remove all focus outlines and mobile tap highlight */
+input:focus,
+button:focus {
+  outline: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 30px;
+   box-shadow: none;     /* remove shadow */
   padding: 0;           /* remove extra padding */
 }
 
 #micBtn:hover {
   color: #fff;          /* optional hover effect for icon */
 }
+}
+
 /* Responsive tweaks */
 @media (max-width: 480px) {
   header {
@@ -389,6 +389,7 @@ button:focus {
   outline: none;
   box-shadow: none;
 }
+
 
 
 
