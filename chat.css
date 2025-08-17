@@ -1,327 +1,157 @@
-/* chat.css - Cool vibes version */
-
-/* Reset and base */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Body Styling */
 body {
-  height: 100vh;
-  background: linear-gradient(135deg, #2a5298, #1e3c72); /* Deep blue gradient */
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: #fff;
   display: flex;
   flex-direction: column;
-  color: #e0e7ff; /* Soft light text */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
 }
 
 /* Header */
 header {
-  background: linear-gradient(90deg, #667eea, #764ba2); /* Vibrant purple-blue gradient */
-  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #4e54c8;
+  color: #fff;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu {
+  position: relative;
+}
+
+#hamburger {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#menu-dropdown {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background: #fff;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+#menu-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
   text-align: left;
-  font-size: 2rem;
-  font-weight: 800;
-  letter-spacing: 3px;
-  color: #f0f5ff;
-  text-shadow: 0 0 8px rgba(118, 75, 162, 0.8);
-  
-  user-select: none;
-  flex-shrink: 0;
-  position: fixed;
 }
 
-/* Chat container */
+#menu-dropdown button:hover {
+  background: #f0f0f0;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Chat Container */
 .chat-container {
-  display: flex;
-  flex-direction: column;
   flex: 1;
-  padding: 20px 16px;
-  background: #121830; /* Very dark navy */
-  border-radius: 0 0 20px 20px;
-  height: 100vh;
-}
-
-/* Chat messages area */
-#chat {
-  flex-grow: 1;
-  overflow-y: auto;
-  padding-right: 8px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  scroll-behavior: smooth;
+  justify-content: space-between;
+  padding: 10px;
 }
 
-/* Scrollbar */
-#chat::-webkit-scrollbar {
-  width: 8px;
+#chat {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
 }
 
-#chat::-webkit-scrollbar-thumb {
-  background-color: #764ba2;
-  border-radius: 6px;
-  box-shadow: 0 0 8px #764ba2;
-}
-
-/* Message bubbles */
-.message {
-  max-width: 75%;
-  padding: 14px 24px;
-  border-radius: 30px;
-  line-height: 1.5;
-  font-size: 1.05rem;
-  font-weight: 500;
-  word-wrap: break-word;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.4);
-  user-select: text;
-  transition: background-color 0.3s ease;
-  
-}
-
-/* User message (right) */
-.message.user {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: #f0f5ff;
-  align-self: flex-end;
-  border-bottom-right-radius: 0;
-  box-shadow: 0 0 18px #764ba2aa;
-}
-
-/* Bot message (left) */
-.message.bot {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  color: #cfd8ff;
-  align-self: flex-start;
-  border-bottom-left-radius: 0;
-  box-shadow: 0 0 18px #1e3c72aa;
-}
-
-/* Input area */
+/* Input Area */
 .input-area {
   display: flex;
-  margin-top: 16px;
-  gap: 16px;
-}
-
-/* Input wrapper for mic inside input */
-.input-wrapper {
+  align-items: center;
   position: relative;
-  flex: 1;
-}
-
-/* Text input adjustments for mic */
-.input-wrapper input {
-  width: 100%;
-  padding: 16px 50px 16px 22px; /* added right padding for mic */
+  background: #fff;
   border-radius: 30px;
+  padding: 5px 15px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px 40px 10px 10px; /* extra space for mic */
   border: none;
+  border-radius: 30px;
   outline: none;
-  font-size: 1.1rem;
-  background: #2a3a72;
-  color: #d1dbff;
-  box-shadow: inset 0 0 15px #3b4cad;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1rem;
+  color: #333;
+  background: transparent;
 }
 
-.input-wrapper input::placeholder {
-  color: #a0a8d3;
+.input-area button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  background: #764ba2;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.input-wrapper input:focus {
-  background-color: #3b4cad;
-  color: #f0f5ff;
+.input-area button:hover {
+  background: #5b3a91;
 }
 
 /* Mic button inside input */
 #micBtn {
   position: absolute;
   top: 50%;
-  right: 8px;
+  right: 55px; /* before send button */
   transform: translateY(-50%);
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
+  width: auto;
+  height: auto;
   border: none;
-  background: #764ba2; /* matches send button color */
-  color: #f0f5ff;
+  background: transparent; /* no background */
+  color: #764ba2; /* mic color */
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
-  box-shadow: 0 6px 20px #764ba2cc;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.3rem;
+  box-shadow: none; /* remove shadow */
+  transition: transform 0.2s ease;
 }
 
 #micBtn:hover {
-  background: #5b3990; /* matches send button hover */
-  box-shadow: 0 8px 28px #5b3990cc;
-}
-
-/* Send button */
-.input-area button {
-  padding: 16px 28px;
-  border-radius: 30px;
-  border: none;
-  background: #764ba2;
-  color: #f0f5ff;
-  font-weight: 700;
-  font-size: 1.1rem;
-  cursor: pointer;
-  box-shadow: 0 6px 20px #764ba2cc;
-  transition: background 0.3s ease, box-shadow 0.3s ease;;
-}
-
-.input-area button:hover {
-  background: #5b3990;
-  box-shadow: 0 8px 28px #5b3990cc;
-}
-
-body.dark-mode {
-  background-color: #222;
-  color: white;
-}
-
-body.dark-mode .message.bot {
-  background-color: #444;
-}
-
-body.dark-mode .message.user {
-  background-color: #666;
-}
-#controls {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-#controls button {
-  background: linear-gradient(135deg, #4e8cff, #2a6fd4);
-  color: white;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.1s ease;
-}
-
-#controls button:hover {
-  background: linear-gradient(135deg, #2a6fd4, #4e8cff);
-}
-
-#controls button:active {
-  transform: scale(0.96);
-}
-
-body.dark-mode #controls button {
-  background: linear-gradient(135deg, #666, #444);
-  color: white;
-}
-
-body.dark-mode #controls button:hover {
-  background: linear-gradient(135deg, #555, #333);
-}
-/* Dark mode full page fix */
-body.dark-mode {
-  background: linear-gradient(135deg, #111, #222);
-  color: white;
-}
-
-body.dark-mode header {
-  background: linear-gradient(90deg, #333, #111);
-  color: #eee;
-  text-shadow: none;
-}
-
-body.dark-mode .chat-container {
-  background: #111;
-  box-shadow: inset 0 0 50px #000;
-}
-
-body.dark-mode .message.bot {
-  background: linear-gradient(135deg, #333, #444);
-  color: #ddd;
-}
-
-body.dark-mode .message.user {
-  background: linear-gradient(135deg, #555, #666);
-  color: #fff;
-}
-
-body.dark-mode .input-area input {
-  background: #333;
-  color: white;
-  box-shadow: inset 0 0 10px #000;
-}
-
-body.dark-mode .input-area input::placeholder {
-  color: #bbb;
-}
-
-body.dark-mode .input-area button {
-  background: #444;
-  color: white;
+  transform: translateY(-50%) scale(1.1);
+  background: transparent;
   box-shadow: none;
 }
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
 
-header .logo {
-  font-size: 2rem;
-  font-weight: 800;
-}
-
-header .menu {
-  position: relative;
-}
-
-#hamburger {
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  color: white;
-  cursor: pointer;
-}
-
-#menu-dropdown {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: linear-gradient(135deg, #4e8cff, #2a6fd4);
-  border-radius: 6px;
-  display: flex;
-  flex-direction: column;
-  padding: 8px;
-  gap: 6px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 100;
-}
-
-#menu-dropdown.hidden {
-  display: none;
-}
-
-#menu-dropdown button {
-  background: transparent;
-  border: none;
-  color: white;
-  padding: 6px 10px;
-  text-align: left;
-  cursor: pointer;
-}
-
-#menu-dropdown button:hover {
-  background: rgba(255,255,255,0.2);}
-/* Remove all focus outlines and mobile tap highlight */
+/* Prevent blue focus + keep border radius */
 input:focus,
 button:focus {
   outline: none !important;
@@ -330,31 +160,5 @@ button:focus {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-radius: 0; /* optional to avoid inner glow on iOS */
+  border-radius: inherit !important;
 }
-/* Responsive tweaks */
-@media (max-width: 480px) {
-  header {
-    font-size: 1.6rem;
-    padding: 14px 0;
-  }
-
-  .input-area input {
-    font-size: 1rem;
-    padding: 14px 18px;
-  }
-
-  .input-area button {
-    padding: 14px 22px;
-    font-size: 1rem;
-  }
-
-  .message {
-    font-size: 1rem;
-  }
-}
-.btns {
-  margin-left: -180px;
-}
-
-
